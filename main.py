@@ -1,11 +1,14 @@
 from tkinter import *
 from tkinter import messagebox
 import password
+import pyperclip
 
 
 def generate_password():
     password_text.set("")
-    password_text.set(password.sifre_uret())
+    uretilen_sifre=password.sifre_uret()
+    password_text.set(uretilen_sifre)
+    pyperclip.copy(uretilen_sifre)
 
 
 def save():
